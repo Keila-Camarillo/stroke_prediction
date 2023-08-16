@@ -7,7 +7,7 @@ import plotly.express as px
 from sklearn.preprocessing import MinMaxScaler, StandardScaler, RobustScaler
 from scipy import stats
 
-def relationship_graph(train, graph_title, feature, target):
+def relationship_graph(train, graph_title, feature, target, tk_label=None):
     '''
     This function will take the train, graph_title, feature, and target,
     and it will display a bargraph based on the information provided for the churn dataset 
@@ -18,8 +18,8 @@ def relationship_graph(train, graph_title, feature, target):
     sns.barplot(x=feature, y=target, data=train)
     population_stroke_rate = train.stroke.mean()
 
-    tick_label = ["Female", "Male"]
-    ax.set_xticklabels(tick_label)
+    # tick_label = ["Female", "Male"]
+    # ax.set_xticklabels(tick_label)
 
     plt.axhline(population_stroke_rate, label="Population Stroke Rate")
     plt.legend()

@@ -29,7 +29,8 @@ def clean_df():
     df = df.drop(columns=["id"])
 
     # create column if patient is a child from work type
-    df['is_child'] = (df['work_type'] == "children").astype(int)
+    # df['is_child'] = (df['work_type'] == "children").astype(int)
+    df['is_child'] = df['age'].apply(lambda age: 1 if age < 18 else 0)
     
     # get dummies for columns
     dummy_df = pd.get_dummies(df[["gender",

@@ -19,14 +19,14 @@ from scipy import stats
 from sklearn.svm import SVC
 from sklearn.naive_bayes import GaussianNB
 
-def relationship_graph(train, graph_title, feature, target, tk_label=None):
+def relationship_graph(train, feature, target, tk_label=None):
     '''
     This function will take the train, graph_title, feature, and target,
     and it will display a bargraph based on the information provided for the churn dataset 
 
     '''
     fig, ax =plt.subplots()
-    plt.title(graph_title)
+    # plt.title(graph_title)
     sns.barplot(x=feature, y=target, data=train)
     population_stroke_rate = train.stroke.mean()
 
